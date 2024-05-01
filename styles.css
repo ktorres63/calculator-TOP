@@ -16,16 +16,23 @@
   background-color: #f8f9f9;
   border-radius: 16px;
 }
-#display{
+#display {
   width: 350px;
   height: 30px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #cfd5cf ;
-  
+  background-color: #cfd5cf;
+  border: 1px black solid;
 }
-.btn{
+#pads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+
+}
+.btn {
   padding: 20px;
   font-size: 25px;
   border: 1px solid blue;
+  width: 75px;
 }
