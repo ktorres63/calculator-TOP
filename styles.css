@@ -7,10 +7,10 @@
   text-align: center;
 }
 .numbers{
-  display: inline-block;
+  display: block;
   background-color: #cfd5cf;
   font-size: 70px;
-  margin-left: auto;
+  text-align: end;
   font-family:  "Jersey 15", sans-serif;
   color: black;
 }
@@ -24,6 +24,7 @@
   border-radius: 8px;
 }
 #display {
+  padding: 8px;
   width: 316px;
   height: 80px;
   margin-left: auto;
