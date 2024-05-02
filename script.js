@@ -12,7 +12,7 @@ btns.forEach(btn =>{
 
 
 
-const btn = document.querySelector(".seven")
+// const btn = document.querySelector(".seven")
 // btn.addEventListener("click", ()=> {
 //   console.log(btn.textContent)
 // })
