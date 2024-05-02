@@ -8,7 +8,7 @@
 }
 
 #calculator {
-  padding: 16px;
+  padding: 20px;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
@@ -17,14 +17,15 @@
   border-radius: 8px;
 }
 #display {
-  width: 330px;
-  height: 50px;
+  width: 316px;
+  height: 80px;
   margin-left: auto;
   margin-right: auto;
   background-color: #cfd5cf;
   border: 1px black solid;
 }
 #pads {
+  margin-top: 18px;
   margin-left: auto;
   margin-right: auto;
   width: 316px;
@@ -42,6 +43,23 @@
 }
 .btn:active{
   background-color: aqua;
+  color: black;
+}
+
+.btn.op{
+  background-color: #699ccc;
+}
+.btn.config{
+  background-color: #b94237;
+  
+}
+.btn.op:active{
+  background-color: #087ae4;
+
+}
+.btn.config:active{
+  background-color: #e32412;
+
 }
 .btn.zero{
   width: 155px;
