@@ -8,16 +8,16 @@
 }
 
 #calculator {
+  padding: 16px;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
   width: 400px;
-  height: 400px;
   background-color: #f8f9f9;
   border-radius: 8px;
 }
 #display {
-  width: 350px;
+  width: 330px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -25,13 +25,16 @@
   border: 1px black solid;
 }
 #pads {
-  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 316px;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   background-color: #f8f9f9;
 }
 .btn {
+  border-radius: 5px;
   padding: 20px;
   font-size: 25px;
   border: 1px solid blue;
@@ -39,4 +42,7 @@
 }
 .btn:active{
   background-color: aqua;
+}
+.btn.zero{
+  width: 155px;
 }
