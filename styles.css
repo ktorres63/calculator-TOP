@@ -41,26 +41,23 @@
   border: 1px solid blue;
   width: 75px;
 }
-.btn:active{
+.btn:active {
   background-color: aqua;
   color: black;
 }
 
-.btn.op{
+.btn.op {
   background-color: #699ccc;
 }
-.btn.config{
+.btn.config {
   background-color: #b94237;
-  
 }
-.btn.op:active{
+.btn.op:active {
   background-color: #087ae4;
-
 }
-.btn.config:active{
+.btn.config:active {
   background-color: #e32412;
-
 }
-.btn.zero{
+.btn.zero {
   width: 155px;
 }
