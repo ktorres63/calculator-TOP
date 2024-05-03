@@ -7,7 +7,7 @@ const operators = document.querySelectorAll(".op"); //All operations
 //some op
 const plus = document.querySelector(".plus");
 
-let displayNums = [];
+let arrNums = [];
 let num1;
 let num2;
 let operator;
@@ -15,27 +15,33 @@ let operator;
 // Catch all number buttons, and are shown on the display
 numbersBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
-    if (displayNums.length === 0) {
+    if (arrNums.length === 0) {
       numbersDisplay.textContent = "";
     }
-    displayNums.push(btn.textContent);
+    arrNums.push(btn.textContent);
     numbersDisplay.textContent += btn.textContent;
   });
 });
 
 operators.forEach((op) => {
   op.addEventListener("click", () => {
-    num1 = parseFloat([...displayNums].join(""));
+    num1 = parseFloat([...arrNums].join(""));
     operator = op.textContent;
-    displayNums.splice(0, displayNums.length); //delete elements in arr
+    arrNums.splice(0, arrNums.length); //delete elements in arr
     console.log(operator);
   });
 });
 
 equal.addEventListener("click", () => {
-  num2 = parseFloat([...displayNums].join(""));
-  displayNums.splice(0, displayNums.length); //delete elements in arr
-  numbersDisplay.textContent = operate(num1, num2, operator)
+  num2 = parseFloat([...arrNums].join(""));
+  arrNums.splice(0, arrNums.length); //delete elements in arr
+  if(operator === "/" && num2 === 0){
+    numbersDisplay.textContent = "Zero?"
+  }
+  else{
+
+    numbersDisplay.textContent = operate(num1, num2, operator)
+  }
 
   console.log(num1);
   console.log(num2);
@@ -44,7 +50,7 @@ equal.addEventListener("click", () => {
 reset.addEventListener("click", () => location.reload());
 
 function operate(n1, n2, op) {
-  let result = 0;
+  let result;
   switch (op) {
     case "+":
       result = n1 + n2;
@@ -59,7 +65,10 @@ function operate(n1, n2, op) {
       result = n1 / n2;
       break;
     default:
-      result = -1;
+      result = n1;
   }
   return result;
+}
+function div(n2){
+
 }
