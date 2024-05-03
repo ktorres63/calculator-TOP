@@ -27,38 +27,39 @@ operators.forEach((op) => {
   op.addEventListener("click", () => {
     num1 = parseFloat([...displayNums].join(""));
     operator = op.textContent;
-    displayNums.splice(0, displayNums.length);
+    displayNums.splice(0, displayNums.length); //delete elements in arr
     console.log(operator);
   });
 });
 
-// plus.addEventListener("click", () => {
-//   num1 = parseFloat([...displayNums].join(""));
-//   op = plus.textContent;
-//   displayNums.splice(0, displayNums.length);
-//   console.log(op);
-// });
-
 equal.addEventListener("click", () => {
   num2 = parseFloat([...displayNums].join(""));
+  displayNums.splice(0, displayNums.length); //delete elements in arr
+  numbersDisplay.textContent = operate(num1, num2, operator)
 
   console.log(num1);
   console.log(num2);
-  switch (operator) {
-    case "+":
-      console.log(num1 + num2);
-      break;
-    case "-":
-      console.log(num1 - num2);
-      break;
-    case "*":
-      console.log(num1 * num2);
-      break;
-    case "/":
-      console.log(num1 / num2);
-      break;
-    default:
-      console.log("ERROR");
-  }
+  console.log(operate(num1, num2, operator));
 });
 reset.addEventListener("click", () => location.reload());
+
+function operate(n1, n2, op) {
+  let result = 0;
+  switch (op) {
+    case "+":
+      result = n1 + n2;
+      break;
+    case "-":
+      result = n1 - n2;
+      break;
+    case "*":
+      result = n1 * n2;
+      break;
+    case "/":
+      result = n1 / n2;
+      break;
+    default:
+      result = -1;
+  }
+  return result;
+}
