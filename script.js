@@ -3,6 +3,7 @@ const numbersDisplay = document.querySelector(".numbers");
 const equal = document.querySelector(".equal");
 const reset = document.querySelector(".AC");
 const operators = document.querySelectorAll(".op"); //All operations
+const percent = document.querySelector(".percent")
 
 //some op
 const plus = document.querySelector(".plus");
@@ -39,14 +40,19 @@ equal.addEventListener("click", () => {
     numbersDisplay.textContent = "Zero?"
   }
   else{
-
     numbersDisplay.textContent = operate(num1, num2, operator)
   }
-
   console.log(num1);
   console.log(num2);
   console.log(operate(num1, num2, operator));
 });
+
+percent.addEventListener("click",()=>{
+  num1 = parseFloat([...arrNums].join(""));
+  console.log(num1*0.01)
+  numbersDisplay.textContent = num1*0.01
+})
+
 reset.addEventListener("click", () => location.reload());
 
 function operate(n1, n2, op) {
@@ -68,7 +74,4 @@ function operate(n1, n2, op) {
       result = n1;
   }
   return result;
-}
-function div(n2){
-
 }
