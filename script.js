@@ -3,7 +3,8 @@ const numbersDisplay = document.querySelector(".numbers");
 const equal = document.querySelector(".equal");
 const reset = document.querySelector(".AC");
 const operators = document.querySelectorAll(".op"); //All operations
-const percent = document.querySelector(".percent")
+const percent = document.querySelector(".percent");
+const subsAdd = document.querySelector(".minus-Add");
 
 //some op
 const plus = document.querySelector(".plus");
@@ -36,24 +37,29 @@ operators.forEach((op) => {
 equal.addEventListener("click", () => {
   num2 = parseFloat([...arrNums].join(""));
   arrNums.splice(0, arrNums.length); //delete elements in arr
-  if(operator === "/" && num2 === 0){
-    numbersDisplay.textContent = "Zero?"
-  }
-  else{
-    numbersDisplay.textContent = truncate(operate(num1, num2, operator))
+  if (operator === "/" && num2 === 0) {
+    numbersDisplay.textContent = "Zero?";
+  } else {
+    numbersDisplay.textContent = truncate(operate(num1, num2, operator));
   }
   console.log(`num1: ${num1}`);
   console.log(`num2: ${num2}`);
   console.log(`operation ${truncate(operate(num1, num2, operator))}`);
 });
 
-percent.addEventListener("click",()=>{
+percent.addEventListener("click", () => {
   num1 = parseFloat([...arrNums].join(""));
-  console.log(num1*0.01)
-  numbersDisplay.textContent = num1*0.01
-})
+  console.log(num1 * 0.01);
+  numbersDisplay.textContent = num1 * 0.01;
+});
 
 reset.addEventListener("click", () => location.reload());
+
+subsAdd.addEventListener("click", () => {
+  num1 = parseFloat([...arrNums].join(""));
+  num1 = num1 * -1;
+  numbersDisplay.textContent = num1;
+});
 
 function operate(n1, n2, op) {
   let result;
@@ -76,8 +82,8 @@ function operate(n1, n2, op) {
   return result;
 }
 
-function truncate(resp){ 
-  let resStr = resp.toString()
-  let newRes = resStr.length >= 10 ? resStr.slice(0,10): resp.toString()
-  return newRes  // result in str
+function truncate(resp) {
+  let resStr = resp.toString();
+  let newRes = resStr.length >= 10 ? resStr.slice(0, 10) : resp.toString();
+  return newRes; // result in str
 }
