@@ -59,8 +59,11 @@ equal.addEventListener("click", () => {
 
 percent.addEventListener("click", () => {
   num1 = parseFloat([...arrNums].join(""));
-  console.log(num1 * 0.01);
-  numbersDisplay.textContent = num1 * 0.01;
+  console.log(`num1: ${num1}`);
+
+  num1 = num1 * 0.01;
+  console.log(`num1: ${num1}`);
+  numbersDisplay.textContent = num1;
 });
 
 reset.addEventListener("click", () => location.reload());
