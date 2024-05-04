@@ -40,11 +40,11 @@ equal.addEventListener("click", () => {
     numbersDisplay.textContent = "Zero?"
   }
   else{
-    numbersDisplay.textContent = operate(num1, num2, operator)
+    numbersDisplay.textContent = truncate(operate(num1, num2, operator))
   }
-  console.log(num1);
-  console.log(num2);
-  console.log(operate(num1, num2, operator));
+  console.log(`num1: ${num1}`);
+  console.log(`num2: ${num2}`);
+  console.log(`operation ${truncate(operate(num1, num2, operator))}`);
 });
 
 percent.addEventListener("click",()=>{
@@ -74,4 +74,10 @@ function operate(n1, n2, op) {
       result = n1;
   }
   return result;
+}
+
+function truncate(resp){ 
+  let resStr = resp.toString()
+  let newRes = resStr.length >= 10 ? resStr.slice(0,10): resp.toString()
+  return newRes  // result in str
 }
