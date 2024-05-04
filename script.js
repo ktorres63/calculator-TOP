@@ -28,7 +28,9 @@ numbersBtns.forEach((btn) => {
 
 operators.forEach((op) => {
   op.addEventListener("click", () => {
-    num1 = parseFloat([...arrNums].join(""));
+    if (arrNums.length !== 0) {
+      num1 = parseFloat([...arrNums].join(""));
+    }
     operator = op.textContent;
     arrNums.splice(0, arrNums.length); //delete elements in arr
     console.log(operator);
@@ -38,7 +40,7 @@ operators.forEach((op) => {
 equal.addEventListener("click", () => {
   num2 = parseFloat([...arrNums].join(""));
   arrNums.splice(0, arrNums.length); //delete elements in arr
-  result = truncate(operate(num1, num2, operator))
+  result = truncate(operate(num1, num2, operator));
 
   if (operator === "/" && num2 === 0) {
     numbersDisplay.textContent = "Zero?";
@@ -51,9 +53,8 @@ equal.addEventListener("click", () => {
   console.log(`operation ${truncate(operate(num1, num2, operator))}`);
   console.log(`arrNums: ${arrNums}`);
 
-   
-  console.log(`arrNums: ${arrNums}`);
-
+  num1 = result;
+  console.log(`num1: ${num1}`);
 });
 
 percent.addEventListener("click", () => {
